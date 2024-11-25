@@ -90,7 +90,7 @@ public class Principal {
 		while (true) {
 			System.out.println("[1] BUSCAR PACIENTE X DE ESPECIALIDAD Y");
 			System.out.println("[2] LISTAR LOS PACIENTES DE LA FECHA X");
-			System.out.println("[3] PERSONA CON MAYOR EDAD DE LA SALA X");
+			System.out.println("[3] Calcular el tiempo de espera de los pacientes no estan atendidos(No)");
 			System.out.println("[4] MOVER AL PRINCIPIO LOS PACINTES DE URGENCIA");
 			System.out.println("[5] MOSTRAR PACINTES DEL DOCTOR X");
 			System.out.println("INTRO CUAL INGRESAR ");

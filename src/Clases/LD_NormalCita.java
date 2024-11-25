@@ -10,7 +10,7 @@ public class LD_NormalCita extends ListaDobleCita{
 			return true;
 		return false;
 	}
-	int nroNodos() {
+	public int nroNodos() {
 		int c = 0;
 		NodoCita R = this.P;
 		while(R != null) {

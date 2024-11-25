@@ -11,7 +11,7 @@ public class LD_CircularConsultorio extends ListaDobleConsultorio{
 			return true;
 		return false;
 	}
-	int nroNodos() {
+	public int nroNodos() {
 		int c = 0;
 		NodoConsultorio R = P;
 		if(!esVacia()) {

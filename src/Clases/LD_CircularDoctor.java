@@ -11,7 +11,7 @@ public class LD_CircularDoctor extends ListaDobleDoctor{
 			return true;
 		return false;
 	}
-	int nroNodos() {
+	public int nroNodos() {
 		int c = 0;
 		NodoDoctor R = P;
 		if(!esVacia()) {

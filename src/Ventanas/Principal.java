@@ -14,6 +14,15 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Principal extends javax.swing.JFrame {
     private Sala_de_Espera A = new Sala_de_Espera();
+
+    public Sala_de_Espera getA() {
+        return A;
+    }
+
+    public void setA(Sala_de_Espera A) {
+        this.A = A;
+    }
+    
     /**
      * Creates new form Principal
      */
@@ -41,28 +50,38 @@ public class Principal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         pantallaPrincipal = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(51, 102, 255));
 
+        titulo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        titulo.setText("SALA DE ESPERA");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(286, 286, 286)
+                .addComponent(titulo)
+                .addContainerGap(296, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 62, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 737, -1));
-
-        titulo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        titulo.setText("SALA DE ESPERA");
-        getContentPane().add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 68, -1, 28));
 
         jPanel2.setBackground(new java.awt.Color(51, 102, 255));
 
@@ -78,19 +97,19 @@ public class Principal extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(637, Short.MAX_VALUE)
+                .addContainerGap(641, Short.MAX_VALUE)
                 .addComponent(BotonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46))
+                .addGap(42, 42, 42))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addContainerGap()
                 .addComponent(BotonSalir)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 740, 60));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 740, 50));
 
         botonCargar.setText("Cargar");
         botonCargar.addActionListener(new java.awt.event.ActionListener() {
@@ -98,10 +117,10 @@ public class Principal extends javax.swing.JFrame {
                 botonCargarActionPerformed(evt);
             }
         });
-        getContentPane().add(botonCargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 70, 30));
+        getContentPane().add(botonCargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 360, 70, 30));
 
         jLabel1.setText("cargar consultas");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, -1, -1));
 
         botonMostrar.setText("Mostrar");
         botonMostrar.addActionListener(new java.awt.event.ActionListener() {
@@ -109,14 +128,51 @@ public class Principal extends javax.swing.JFrame {
                 botonMostrarActionPerformed(evt);
             }
         });
-        getContentPane().add(botonMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 80, 30));
+        getContentPane().add(botonMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 360, 80, 30));
 
         jLabel2.setText("Mostrar consultas");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 340, -1, -1));
 
         jScrollPane1.setViewportView(pantallaPrincipal);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, -1, 260));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, -1, 260));
+
+        jLabel3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel3.setText("SOLUCIONES A LOS PROBLEMAS");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
+
+        jButton1.setText("Buscar Paciente X de especialidad Y");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
+
+        jButton2.setText("LISTAR LOS PACIENTES DE LA FECHA X");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
+
+        jButton3.setText("CALCULAR TIEMPO DE ESPERA ");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 240, -1));
+
+        jButton4.setText("ORDENAR PACIENTES POR PRIORIDADES");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -146,6 +202,38 @@ public class Principal extends javax.swing.JFrame {
         }
         pantallaPrincipal.setModel(pantalla);
     }//GEN-LAST:event_botonMostrarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Problema1 v2 = new Problema1(this);
+        v2.setVisible(true);
+        this.setVisible(false);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Problema2 v3 = new Problema2(this);
+        v3.setVisible(true);
+        this.setVisible(false);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        Problema3 v4 = new Problema3(this);
+        v4.setVisible(true);
+        this.setVisible(false);
+        this.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        Problema4 v5 = new Problema4(this);
+        v5.setVisible(true);
+        this.setVisible(false);
+        this.dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,8 +274,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton BotonSalir;
     private javax.swing.JButton botonCargar;
     private javax.swing.JButton botonMostrar;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollBar jScrollBar1;
