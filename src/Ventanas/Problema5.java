@@ -4,23 +4,24 @@
  */
 package Ventanas;
 
-import Clases.*;
+import Clases.Consulta;
+import Clases.NodoConsulta;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author ASUS
  */
-public class Problema4 extends javax.swing.JFrame {
+public class Problema5 extends javax.swing.JFrame {
     private Principal v1;
     /**
-     * Creates new form Problema4
+     * Creates new form Problema5
      */
-    public Problema4() {
+    public Problema5() {
         initComponents();
     }
 
-    Problema4(Principal aThis) {
+    Problema5(Principal aThis) {
         initComponents();
         this.v1=aThis;
     }
@@ -35,38 +36,38 @@ public class Problema4 extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        botonAtras = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        PANTALLAORDENAR = new javax.swing.JTable();
-        botonMostrarConsultas = new javax.swing.JButton();
+        patallaConsultas = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        botonMostrrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel1.setText("[4] ORDENAR PACIENTES POR PRIORIDADES");
+        jLabel1.setText("[5] DAR PRIORIDA A ADULTOS MAYORES DE 60 AÑOS POR LA LEY 369");
 
-        jButton1.setText("ORDENAR PACIENTES");
+        jScrollPane1.setViewportView(patallaConsultas);
+
+        jButton1.setText("ATRAS");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        botonAtras.setText("ATRAS");
-        botonAtras.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.setText("ORDENAR POR PRIORIDAD");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAtrasActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
 
-        jScrollPane1.setViewportView(PANTALLAORDENAR);
-
-        botonMostrarConsultas.setText("MOSTRAR  CONUSLTAS");
-        botonMostrarConsultas.addActionListener(new java.awt.event.ActionListener() {
+        botonMostrrar.setText("MOSTRA CONSULTAS");
+        botonMostrrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonMostrarConsultasActionPerformed(evt);
+                botonMostrrarActionPerformed(evt);
             }
         });
 
@@ -75,66 +76,75 @@ public class Problema4 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botonMostrarConsultas, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(137, 137, 137))
+                        .addContainerGap(63, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 653, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(botonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addComponent(botonMostrrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 474, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(32, 32, 32))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(105, 105, 105)
-                        .addComponent(jButton1)
-                        .addGap(42, 42, 42)
-                        .addComponent(botonMostrarConsultas))
-                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jLabel1)
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                .addComponent(botonAtras)
-                .addGap(41, 41, 41))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(132, 132, 132)
+                        .addComponent(jButton2)
+                        .addGap(50, 50, 50)
+                        .addComponent(botonMostrrar)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(49, 49, 49))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        int nroElem = v1.getA().getEmergencia().nroElem();
-		
-	
-		for (int i = 0; i < nroElem; i++) {
-			Emergencia eme = v1.getA().getEmergencia().eli();
-			v1.getA().getEmergencia().adi(eme);
-			ordenar_consultas(v1.getA(),eme.getNivel_gravedad());
-		}
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void botonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasActionPerformed
-        // TODO add your handling code here:
-        this.v1.setVisible(true);
-        this.setVisible(false);
-        this.dispose();
-    }//GEN-LAST:event_botonAtrasActionPerformed
-
-    private void botonMostrarConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMostrarConsultasActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         NodoConsulta R = v1.getA().getConsulta().getP();
+        int edad = 60;
+		NodoConsulta S = R;
+		while (R!=null) {
+			Consulta con = R.getConsulta();
+			if (con.getPaciente().getEdad()>=edad) {
+				if (R==v1.getA().getConsulta().getP()) {
+					R=R.getSig();
+					S=R;
+				}else {
+					S.setSig(R.getSig());
+					R = R.getSig();
+					v1.getA().getConsulta().adiPrincipio(con);
+				}
+			}else {
+				S=R;
+				R=R.getSig();
+
+			}
+		}
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void botonMostrrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMostrrarActionPerformed
+        // TODO add your handling code here:
+         NodoConsulta R = v1.getA().getConsulta().getP();
         String titulos[] = {"\t====== CONSULTAS ======"};
         DefaultTableModel pantalla = new DefaultTableModel(null,titulos);
         int cont = 0;
@@ -163,9 +173,15 @@ public class Problema4 extends javax.swing.JFrame {
             pantalla.addRow(edad);
             R=R.getSig();
         }
-        PANTALLAORDENAR.setModel(pantalla);
+        patallaConsultas.setModel(pantalla);
+    }//GEN-LAST:event_botonMostrrarActionPerformed
 
-    }//GEN-LAST:event_botonMostrarConsultasActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+         this.v1.setVisible(true);
+        this.setVisible(false);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,51 +200,30 @@ public class Problema4 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Problema4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Problema5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Problema4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Problema5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Problema4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Problema5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Problema4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Problema5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Problema4().setVisible(true);
+                new Problema5().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable PANTALLAORDENAR;
-    private javax.swing.JButton botonAtras;
-    private javax.swing.JButton botonMostrarConsultas;
+    private javax.swing.JButton botonMostrrar;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable patallaConsultas;
     // End of variables declaration//GEN-END:variables
-
-    private void ordenar_consultas(Sala_de_Espera sala, String nivel_gravedad) {
-        NodoConsulta R = sala.getConsulta().getP();
-		NodoConsulta S = R;
-		while (R!=null) {
-			Consulta con = R.getConsulta();
-			if (con.gettipo_emergencia().equals(nivel_gravedad)) {
-				if (R==sala.getConsulta().getP()) {
-					R=R.getSig();
-					S=R;
-				}else {
-					S.setSig(R.getSig());
-					R = R.getSig();
-					sala.getConsulta().adiPrincipio(con);
-				}
-			}else {
-				S=R;
-				R=R.getSig();
-			}
-		}
-    }
 }

@@ -64,7 +64,7 @@ public class Sala_de_Espera {
 				Ci1.adiFinal(new Cita("124AB", "12/03/2023", "14:45", "Rostro", "Se le acoseja usara protector solar", "Neytan",P1M2));
 				//-------HISTORILA P1-------
 				Historial H1 = new Historial("123A","Normal","Topico",Ci1);
-				Paciente P1 = new Paciente("123ABC1","Jose",45,89765356,H1);
+				Paciente P1 = new Paciente("123ABC1","Jose",60,89765356,H1);
 				Paciente P2 = new Paciente("123ABC1","Karen",34,89765356,H1);
 				//--------CONSULTA 1-----------
 				LS_NormalConsulta Co1 = new LS_NormalConsulta();
